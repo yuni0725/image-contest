@@ -96,7 +96,7 @@ def generate_image_from_openai(username, prompt):
     # generated_images 폴더가 없으면 생성
     os.makedirs("generated_images", exist_ok=True)
     file_name = f"{username}_{formatted_time}_{created}"
-    image.save(f"generated_images/{file_name}")
+    image.save(f"generated_images/{file_name}.png", format="PNG")
     return image, file_name
 
 
