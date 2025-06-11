@@ -10,7 +10,13 @@ import torch.nn as nn
 import torchvision.models as models
 import torchvision.transforms as transforms
 import pandas as pd
-import cv2
+
+try:
+    import cv2
+except ImportError as e:
+    st.error(f"OpenCV import failed: {e}")
+    st.info("Please install opencv-python-headless for deployment environments")
+    st.stop()
 import numpy as np
 from datetime import datetime
 
